@@ -8,8 +8,8 @@ public class Solution {
 
     public static void main(String[] args) {
 
-        BuildingH2O buildingH2O = new BuildingH2O();
-        //	System.out.println(buildingH2O.hydroxyBarrier.getParties());
+        MyBuildingH2O myBuildingH2O = new MyBuildingH2O();
+        //	System.out.println(myBuildingH2O.hydroxyBarrier.getParties());
     }
 
 }
@@ -18,7 +18,7 @@ public class Solution {
  * This class encapsulates the functioning of the code.
  */
 
-class BuildingH2O {
+class MyBuildingH2O {
 
     static int hydrogen =4;
     int oxygen = 4;
@@ -30,21 +30,21 @@ class BuildingH2O {
      * Constructor
      */
 
-    BuildingH2O() {
+    MyBuildingH2O() {
 
         mutex = new java.util.concurrent.Semaphore(0);
         hydroxyBarrier = new java.util.concurrent.CyclicBarrier(4);
-        System.out.println("Initial Oxygen number :"+oxygen);
+        System.out.println("Initial MyOxygen number :"+oxygen);
         System.out.println("Initial Hydrogen number :"+hydrogen);
 
         //Objects of classes
-        Oxygen o = new Oxygen();
+        MyOxygen o = new MyOxygen();
         Hydrogen1 h1 = new Hydrogen1();
         Hydrogen2 h2 = new Hydrogen2();
 
         //Condition for H2O to form
         while(oxygen != 0 && hydrogen >1 ) {
-            System.out.println("Oxygen Left:"+oxygen+" Hydrogen Left:"+hydrogen);
+            System.out.println("MyOxygen Left:"+oxygen+" Hydrogen Left:"+hydrogen);
 
             //Creation of thread
             Thread OxygenThread = new Thread(o);
@@ -56,7 +56,7 @@ class BuildingH2O {
             HydrogenTwoThread.start();
             try
             {
-                //Reducing the number of Oxygen and Hydrogen after creation of a H2O molecule
+                //Reducing the number of MyOxygen and Hydrogen after creation of a H2O molecule
                 oxygen--;
                 hydrogen--;
                 hydrogen--;
@@ -67,7 +67,7 @@ class BuildingH2O {
                 e.printStackTrace();
             }
 
-            System.out.println("Oxygen number :"+oxygen);
+            System.out.println("MyOxygen number :"+oxygen);
             System.out.println("Hydrogen number :"+hydrogen);
 
             hydroxyBarrier.reset();
@@ -76,11 +76,11 @@ class BuildingH2O {
 
 }
 
-class Oxygen implements Runnable {
+class MyOxygen implements Runnable {
 
     public void run() {
         try {
-            BuildingH2O.hydroxyBarrier.await();
+            MyBuildingH2O.hydroxyBarrier.await();
         }
         catch(InterruptedException | java.util.concurrent.BrokenBarrierException e) {}
 
@@ -94,7 +94,7 @@ class Hydrogen1 implements Runnable {
 
     public void run() {
         try {
-            BuildingH2O.hydroxyBarrier.await();
+            MyBuildingH2O.hydroxyBarrier.await();
         }
         catch(InterruptedException | java.util.concurrent.BrokenBarrierException e) {}
 
@@ -105,7 +105,7 @@ class Hydrogen2 implements Runnable {
 
     public void run() {
         try {
-            BuildingH2O.hydroxyBarrier.await();
+            MyBuildingH2O.hydroxyBarrier.await();
         }
         catch(InterruptedException | java.util.concurrent.BrokenBarrierException e) {}
 
