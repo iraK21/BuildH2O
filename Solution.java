@@ -1,4 +1,4 @@
-package Multithreading;
+package BuildH2O;
 
 //import java.util.concurrent.Semaphore;
 //import java.util.concurrent.CyclicBarrier;
@@ -33,17 +33,14 @@ class MyBuildingH2O {
     MyBuildingH2O() {
 
         mutex = new java.util.concurrent.Semaphore(0);
-<<<<<<< HEAD
         /*  Size of Cyclic Barrier is set to 3
         *	1 for Oxygen Thread
         *	2 for Hydrogen Thread(2 molecules of Hydrogen)
         */	
         hydroxyBarrier = new java.util.concurrent.CyclicBarrier(3);
         System.out.println("Initial Oxygen number :"+oxygen);
-=======
         hydroxyBarrier = new java.util.concurrent.CyclicBarrier(4);
         System.out.println("Initial MyOxygen number :"+oxygen);
->>>>>>> cbe76775e19c0b4eb23210d11c5dadadb89c1fb1
         System.out.println("Initial Hydrogen number :"+hydrogen);
 
         //Objects of classes

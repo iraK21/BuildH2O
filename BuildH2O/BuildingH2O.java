@@ -5,13 +5,29 @@ import java.util.concurrent.Semaphore;
 
 public class BuildingH2O {
 
+    /**
+     * Number of hydrogen atoms
+     */
     int hydrogen;
+    /**
+     * Number of oxygen atoms
+     */
     int oxygen;
-    Semaphore hydrogenQueue, oxygenQueue;
+    /**
+     * Hydrogen atoms queue on this semaphore
+     */
+    Semaphore hydrogenQueue;
+    /**
+     * Oxygen atoms queue on this semaphore
+     */
+    Semaphore oxygenQueue;
+    /**
+     * All atoms wait upon this barrier
+     */
     CyclicBarrier hydroxyBarrier;
 
     /**
-     * Constructor
+     * Constructor initializes all member variables to their correct values
      */
     public BuildingH2O() {
 
@@ -21,7 +37,12 @@ public class BuildingH2O {
         oxygenQueue = new Semaphore(0);
     }
 
-    void makeWaterMolecule() {
+    /**
+     * This method indicates that three atoms have bonded.
+     * It then resets the counts and the barrier to their initial states.
+     */
+    void bond() {
+
         System.out.println("Water molecule Produced!");
         hydrogen = 0;
         oxygen = 0;

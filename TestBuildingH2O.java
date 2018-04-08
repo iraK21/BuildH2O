@@ -4,7 +4,7 @@ import BuildH2O.BuildH2O.*;
 
 public class TestBuildingH2O {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 
 		BuildingH2O buildingH2O = new BuildingH2O();
 
@@ -21,7 +21,12 @@ public class TestBuildingH2O {
 			}
 		}
 
+		Thread.sleep(3000);
+		System.exit(0);
+
 	}
 
 }
-
+/*
+Output:
+ */
