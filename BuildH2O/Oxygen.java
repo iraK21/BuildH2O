@@ -1,4 +1,4 @@
-package BuildH2O;
+package BuildH2O.BuildH2O;
 
 import java.util.concurrent.BrokenBarrierException;
 
