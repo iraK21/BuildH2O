@@ -2,7 +2,8 @@
 
 **_Problem Statement_**
 
-There are two kinds of threads, namely, oxygen and hydrogen. <br>
+<<<<<<< HEAD
+There are two kinds of threads, namely, oxygen and hydrogen.
 In order to assemble these threads into water molecules, we have to create a barrier that makes each thread wait until 
 a complete molecule is ready to proceed. <br>
 As each thread passes the barrier, it should invoke bond. You must guarantee that all the threads from one molecule 
