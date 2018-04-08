@@ -1,5 +1,5 @@
 package BuildH2O.BuildH2O;
-// Siddhesh Project
+
 import java.util.concurrent.BrokenBarrierException;
 
 public class Hydrogen implements Runnable {
