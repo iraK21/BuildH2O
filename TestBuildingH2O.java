@@ -15,8 +15,8 @@ public class TestBuildingH2O {
 				thread.start();
 			}
 			else {
-				Oxygen oxygen = new Oxygen(buildingH2O);
-				Thread thread = new Thread(oxygen);
+				Oxygen myOxygen = new Oxygen(buildingH2O);
+				Thread thread = new Thread(myOxygen);
 				thread.start();
 			}
 		}
