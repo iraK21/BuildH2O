@@ -30,10 +30,10 @@ Once all the threads have reached, the barriers then give the way for threads to
 **_Solution_**
 
 We have used the following variables in our solution:<br>
-A class `BuildingH2O` encapsulates:
-A `CyclicBarrier` object `hydroxyBarrier`
-Counts `hydrogen` and `oxygen`
-`Semaphore` `hydrogenQueue`, upon which hydrogen atoms queue
+A class `BuildingH2O` encapsulates:<br>
+A `CyclicBarrier` object `hydroxyBarrier`<br>
+Counts `hydrogen` and `oxygen`<br>
+`Semaphore` `hydrogenQueue`, upon which hydrogen atoms queue<br>
 `Semaphore` `oxygenQueue`, upon which oxygen atoms queue
 
 We have two kinds of threads: `Hydrogen` and `Oxygen`. 
