@@ -1,8 +1,8 @@
-
+package OSProject;
 //import java.util.concurrent.Semaphore;
 //import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.BrokenBarrierException;
-/*
+
 public class Solution {
 
     public static void main(String[] args) {
@@ -16,7 +16,7 @@ public class Solution {
 /**
  * This class encapsulates the functioning of the code.
  */
-/*
+
 class BuildingH2O {
 
     static int hydrogen =4;
@@ -28,7 +28,7 @@ class BuildingH2O {
     /**
      * Constructor
      */
-/*
+
     BuildingH2O() {
 
         mutex = new java.util.concurrent.Semaphore(0);
@@ -110,4 +110,4 @@ class Hydrogen2 implements Runnable {
 
     }
 
-}*/
+}
