@@ -1,8 +1,6 @@
-package OSProject;
-
-import OSProject.BuildH2O.BuildingH2O;
-import OSProject.BuildH2O.Hydrogen;
-import OSProject.BuildH2O.Oxygen;
+import BuildH2O.BuildingH2O;
+import BuildH2O.Hydrogen;
+import BuildH2O.Oxygen;
 
 public class TestBuildingH2O {
 
