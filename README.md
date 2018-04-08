@@ -2,7 +2,6 @@
 
 **_Problem Statement_**
 
-<<<<<<< HEAD
 There are two kinds of threads, namely, oxygen and hydrogen.
 In order to assemble these threads into water molecules, we have to create a barrier that makes each thread wait until 
 a complete molecule is ready to proceed. <br>
@@ -31,3 +30,21 @@ Once all the threads have reached, the barriers then give the way for threads to
 **_Solution_**
 
 We have used the following variables in our solution:
+A `CyclicBarrier` object `hydroxyBarrier`
+Counts `hydrogen` and `oxygen`
+Semaphore `hydrogenQueue`, upon which hydrogen atoms queue
+Semaphore `oxygenQueue`, upon which oxygen atoms queue
+
+We have two kinds of threads: `Hydrogen` and `Oxygen`. 
+Every `Hydrogen` thread waits upon the barrier. It checks whether a hydrogen atom and an oxygen atom are available.
+If they are available, it signals them and invokes `bond()` method, thus combining with them.
+Else, it increments `hydrogen` and queues up on `hydrogenQueue`.
+
+Every `Oxygen` thread also waits upon the barrier. It checks whether two hydrogen atoms are waiting. 
+If they are, it releases them and invokes `bond()` method, thus combining with both of them and producing a water molecule.
+Else, it increments `oxygen` and queues up on `oxygenQueue`.
+
+The `bond()` method resets both the `hydroxyBarrier` and the counts `hydrogen` and `oxygen` to 0.
+
+The Driver class creates and instance of `BuildingH2O`, which all threads share.
+It then creates multiple threads of both `Hydrogen` and `Oxygen` types, and runs them.
