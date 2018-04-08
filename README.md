@@ -29,13 +29,15 @@ Once all the threads have reached, the barriers then give the way for threads to
 
 **_Solution_**
 
-We have used the following variables in our solution:
+We have used the following variables in our solution:<br>
+A class `BuildingH2O` encapsulates:
 A `CyclicBarrier` object `hydroxyBarrier`
 Counts `hydrogen` and `oxygen`
-Semaphore `hydrogenQueue`, upon which hydrogen atoms queue
-Semaphore `oxygenQueue`, upon which oxygen atoms queue
+`Semaphore` `hydrogenQueue`, upon which hydrogen atoms queue
+`Semaphore` `oxygenQueue`, upon which oxygen atoms queue
 
 We have two kinds of threads: `Hydrogen` and `Oxygen`. 
+
 Every `Hydrogen` thread waits upon the barrier. It checks whether a hydrogen atom and an oxygen atom are available.
 If they are available, it signals them and invokes `bond()` method, thus combining with them.
 Else, it increments `hydrogen` and queues up on `hydrogenQueue`.
@@ -46,5 +48,5 @@ Else, it increments `oxygen` and queues up on `oxygenQueue`.
 
 The `bond()` method resets both the `hydroxyBarrier` and the counts `hydrogen` and `oxygen` to 0.
 
-The Driver class creates and instance of `BuildingH2O`, which all threads share.
+The Driver class creates an instance of `BuildingH2O`, which all threads share.
 It then creates multiple threads of both `Hydrogen` and `Oxygen` types, and runs them.
