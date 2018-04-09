@@ -10,8 +10,10 @@ public class TestBuildingH2O {
 		Scanner scanner = new Scanner(System.in);
 		BuildingH2O buildingH2O = new BuildingH2O();
 
-		System.out.println("Enter the number of oxygen threads you want to produce: ");
+		System.out.print("Enter the number of oxygen threads you want to produce: ");
 		int molecules = scanner.nextInt();
+		System.out.print("Enter the amount of time for which you want the main thread to sleep (in seconds): ");
+		int time = scanner.nextInt();
 
 		for (int i = 0; i < 3*molecules; i++) {
 			if(i%3 != 0) {
@@ -26,16 +28,18 @@ public class TestBuildingH2O {
 			}
 		}
 
-		Thread.sleep(3000);
+		Thread.sleep(time*1000);
+		scanner.close();
 		System.exit(0);
 
 	}
 
 }
 /*
-Output:
-Enter the number of oxygen threads you want to produce: 
+Output:Enter the number of oxygen threads you want to produce: 
 10
+Enter the amount of time for which you want the main thread to sleep (in seconds): 
+2 
 Hydrogen atom 1 waiting at barrier.
 Hydrogen atom 2 waiting at barrier.
 Hydrogen atom 3 waiting at barrier.
@@ -51,7 +55,6 @@ Water molecule Produced!
 Hydrogen atom 17 waiting at barrier.
 Oxygen atom 8 waiting at barrier.
 Hydrogen atom 16 waiting at barrier.
-Water molecule Produced!
 Oxygen atom 7 waiting at barrier.
 Hydrogen atom 15 waiting at barrier.
 Oxygen atom 6 waiting at barrier.
@@ -68,4 +71,5 @@ Oxygen atom 2 waiting at barrier.
 Hydrogen atom 10 waiting at barrier.
 Water molecule Produced!
 Oxygen atom 1 waiting at barrier.
+Water molecule Produced!
  */
